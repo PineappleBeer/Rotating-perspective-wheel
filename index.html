@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="./jquery.js"></script>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="parent">
+                <div class="child">A</div>
+                <div class="child">B</div>
+                <div class="child">C</div>
+                <div class="child">D</div>
+                <div class="child">E</div>
+                <div class="child">F</div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var deg = 0,
+            w = window.screen.width,
+            h = window.screen.height;
+
+       document.onmousewheel=(e)=>{
+            deg += e.deltaY;
+            document.querySelector('.parent').style.transform = 'rotateY('+ deg +'deg)'
+       }
+
+       document.onmousemove=(e)=>{
+           document.querySelector('.container').style['perspective-origin'] = e.clientX / w * 100 + '% ' + e.clientY / h * 100 +　'%';//这个相当于视角位置，在哪个位置看这个立体图形
+       }
+    </script>
+</html>
