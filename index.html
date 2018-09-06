@@ -19,7 +19,13 @@
         var deg = 0,
             w = window.screen.width,
             h = window.screen.height;
-
+        $.ajax({
+            url:'https://d252a4a4.ngrok.io/article'
+        }).done(data=>{
+            console.log(data)
+        }).fail(data=>{
+            console.log(data)
+        })
        document.onmousewheel=(e)=>{
             deg += e.deltaY;
             document.querySelector('.parent').style.transform = 'rotateY('+ deg +'deg)'
